@@ -1,0 +1,47 @@
+name: Publish Site
+
+on:
+  workflow_call:
+    inputs:
+      message:
+        type: string
+        required: true
+    secrets:
+      netlify_token:
+        required: true
+      netlify_site_id:
+        required: true
+
+jobs:
+  publish:
+    name: Puslish Site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+          cache: pip
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build Site
+        run: mkdocs build --clean
+
+      - name: Deploy to Netlify
+        uses: jsmrcaga/action-netlify-deploy@v2.3.0
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.netlify_token }}
+          NETLIFY_SITE_ID: ${{ secrets.netlify_site_id }}
+          NETLIFY_DEPLOY_TO_PROD: true
+          NETLIFY_DEPLOY_MESSAGE: ${{ inputs.message }}
+          build_directory: site
+          install_command: 'echo Dependencies already installed.'
+          build_command: 'echo Project already built.'

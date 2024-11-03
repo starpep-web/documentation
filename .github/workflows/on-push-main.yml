@@ -1,0 +1,16 @@
+name: On Push (Main)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    name: Publish Site
+    uses: ./.github/workflows/callable-publish.yml
+    with:
+      message: ${{ github.event.head_commit.message }}
+    secrets:
+      netlify_token: ${{ secrets.NETLIFY_TOKEN }}
+      netlify_site_id: ${{ secrets.NETLIFY_SITE_ID }}
