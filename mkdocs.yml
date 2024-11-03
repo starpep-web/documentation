@@ -1,0 +1,81 @@
+site_name: StarPep Web - Documentation
+site_description: Documentation for the StarPep Web application.
+site_author: StarPep Web
+site_url: https://docs.starpepweb.com
+
+repo_name: 'GitHub: StarPep Web'
+repo_url: https://github.com/starpep-web
+edit_uri: ''
+
+extra:
+  social:
+    - icon: fontawesome/solid/earth-americas
+      link: https://starpepweb.com
+      name: Main Site
+    - icon: fontawesome/solid/envelope
+      link: mailto:starpepweb@gmail.com
+      name: Send us an email
+
+copyright: Copyright &copy; 2024 StarPep Web
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - scheme: default
+      primary: light green
+      accent: light green
+      media: "(prefers-color-scheme: light)"
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      primary: light green
+      accent: light green
+      media: "(prefers-color-scheme: dark)"
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: fontawesome/solid/dna
+    repo: fontawesome/brands/github
+  language: en
+  direction: ltr
+  favicon: assets/favicon.ico
+  features:
+    - navigation.top
+    - navigation.tabs
+    - navigation.tracking
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.mark
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+  - pymdownx.betterem
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      type: date
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md

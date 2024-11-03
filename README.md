@@ -43,7 +43,7 @@ pip install -r requirements.txt
 Run the `mkdocs` command to serve the site:
 
 ```bash
-mkdocs serve -a 0.0.0.0:8000
+mkdocs serve -a 0.0.0.0:8080
 ```
 
-And done, the documentation site should be reachable at `http://localhost:8000`.
+And done, the documentation site should be reachable at `http://localhost:8080`.
