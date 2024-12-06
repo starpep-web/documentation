@@ -1,7 +1,7 @@
 site_name: StarPep Web - Documentation
 site_description: Documentation for the StarPep Web application.
 site_author: StarPep Web
-site_url: https://docs.starpepweb.com
+site_url: https://docs.starpepweb.org
 
 repo_name: 'GitHub: StarPep Web'
 repo_url: https://github.com/starpep-web
@@ -10,7 +10,7 @@ edit_uri: ''
 extra:
   social:
     - icon: fontawesome/solid/earth-americas
-      link: https://starpepweb.com
+      link: https://starpepweb.org
       name: Main Site
     - icon: fontawesome/solid/envelope
       link: mailto:starpepweb@gmail.com
